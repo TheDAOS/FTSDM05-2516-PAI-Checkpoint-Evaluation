@@ -7,11 +7,13 @@ import NavBar from './components/NavBar';
 import ProductDetail from './components/ProductDetail';
 
 const ProductsContext = createContext(null);
+const CartContext = createContext(null);
 
 function App() {
   const api = 'https://fakestoreapi.com/products';
 
-  let [products, setProductList] = useState([]);
+  const [products, setProductList] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
   async function getData(api) {
     try {
@@ -31,17 +33,19 @@ function App() {
 
   return (
     <ProductsContext.Provider value={products}>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<ProductList />} />
-          <Route path='/cart' element={<Cart />} />
-          <Route path='/product/:id' element={<ProductDetail />} />
-        </Routes>
-      </BrowserRouter>
+      <CartContext.Provider value={{ cartItems, setCartItems }}>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<ProductList />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/product/:id' element={<ProductDetail />} />
+          </Routes>
+        </BrowserRouter>
+      </CartContext.Provider>
     </ProductsContext.Provider>
   )
 }
 
-export { ProductsContext }
+export { ProductsContext, CartContext }
 export default App

@@ -91,7 +91,7 @@ nav>a {
   border-radius: 8px;
 }
 
-.ProductDetail > div {
+.ProductDetail>div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,10 +102,18 @@ nav>a {
   margin: auto;
 }
 
+.cart {
+  margin: 1em;
+  padding: 1em;
+  background-color: #121212;
+  border-radius: 8px;
+}
+
 @media (prefers-color-scheme: light) {
 
   header,
-  .card {
+  .card,
+  .cart {
     background-color: #f9f9f9;
     color: #213547;
   }
