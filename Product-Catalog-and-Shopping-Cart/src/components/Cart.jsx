@@ -18,8 +18,16 @@ function Cart() {
         <div className="cart">
             {/* {typeof cart.cartItems} */}
             {cart.cartItems.map(item =>
-                <h1>{item.title}</h1>
+                <div>
+                    {item.title}  ${item.price} 
+                </div>
             )}
+
+            <h2>Total: ${cart.cartItems.reduce((a, item) => {
+                a += item.price
+                return a;
+            }, 0)}</h2>
+            <button> {cart.cartItems.length === 0 ? "Your cart is empty" : "Checkout"} </button>
         </div>
     )
 }
