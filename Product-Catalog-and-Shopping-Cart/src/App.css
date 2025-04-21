@@ -37,3 +37,18 @@
 .read-the-docs {
   color: #888;
 }
+
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding: 10px;
+  background-color: #121212;
+}
+
+nav > a {
+  font-size: large;
+  font-weight: bold;
+}

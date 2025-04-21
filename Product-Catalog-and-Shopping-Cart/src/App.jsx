@@ -1,6 +1,9 @@
 import { useEffect, createContext, useState } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router";
 import './App.css'
 import ProductList from './components/ProductList'
+import Cart from './components/Cart';
+import NavBar from './components/NavBar';
 
 const ProductsContext = createContext(null);
 
@@ -27,7 +30,13 @@ function App() {
 
   return (
     <ProductsContext.Provider value={products}>
-      <ProductList />
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<ProductList />}></Route>
+          <Route path='/cart' element={<Cart />}></Route>
+        </Routes>
+      </BrowserRouter>
     </ProductsContext.Provider>
   )
 }
