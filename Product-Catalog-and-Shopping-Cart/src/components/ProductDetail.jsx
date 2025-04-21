@@ -7,12 +7,28 @@ function ProductDetail() {
     const products = useContext(ProductsContext);
     const { id } = useParams();
 
-    const [ data ] = products.filter((product) => product.id == id);
+    const [data] = products.filter((product) => product.id == id);
 
     console.log(data);
 
+    if (!data) {
+        return (
+            <div className="ProductDetail">
+                <h1>No Data Found!</h1>
+            </div>
+        )
+    }
+
     return (
-        <h1>{data.title}</h1>
+        <div className="ProductDetail">
+            <div>
+                <img src={data.image} />
+            </div>
+            <h2>Title: {data.title}</h2>
+            <span><b>Category:</b> {data.category}</span>
+            <h3>Price: ${data.price}</h3>
+            <p><b>Description:</b> {data.description}</p>
+        </div>
     )
 }
 

@@ -58,17 +58,55 @@
   color: #888;
 }
 
-
-nav {
+header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 1em;
   padding: 10px;
   background-color: #121212;
 }
 
+header>span {
+  font-size: large;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
 nav>a {
   font-size: large;
   font-weight: bold;
+}
+
+.ProductDetail {
+  margin: 1em;
+  padding: 1em;
+  background-color: #121212;
+  border-radius: 8px;
+}
+
+.ProductDetail > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ProductDetail img {
+  border-radius: 8px;
+  margin: auto;
+}
+
+@media (prefers-color-scheme: light) {
+
+  header,
+  .card {
+    background-color: #f9f9f9;
+    color: #213547;
+  }
 }
