@@ -1,14 +1,19 @@
 import { useContext } from "react";
 import { ProductsContext } from "../App";
+import Card from "./Card";
 
 function ProductList() {
 
     const products = useContext(ProductsContext)
 
-    console.log(products);
+    // console.log(products);
 
     return (
-        <h1>ProductList </h1>
+        <div className="products">
+            {products.map((product) =>
+                <Card product={product}></Card>
+            )}
+        </div>
     )
 }
 

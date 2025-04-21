@@ -4,6 +4,7 @@ import './App.css'
 import ProductList from './components/ProductList'
 import Cart from './components/Cart';
 import NavBar from './components/NavBar';
+import ProductDetail from './components/ProductDetail';
 
 const ProductsContext = createContext(null);
 
@@ -33,8 +34,9 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path='/' element={<ProductList />}></Route>
-          <Route path='/cart' element={<Cart />}></Route>
+          <Route path='/' element={<ProductList />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/product/:id' element={<ProductDetail />} />
         </Routes>
       </BrowserRouter>
     </ProductsContext.Provider>
