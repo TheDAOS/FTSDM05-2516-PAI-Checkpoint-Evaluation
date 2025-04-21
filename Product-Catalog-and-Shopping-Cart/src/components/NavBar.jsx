@@ -14,7 +14,7 @@ function NavBar() {
                 <Link to="/">Products</Link>
                 <Link to="/cart">Cart</Link>
             </nav>
-            <button> {cartItems.length === 0 ? "Your cart is empty" : "Checkout"} </button>
+            <button> {cartItems.length > 0 ? "Checkout" : "Your cart is empty"} </button>
         </header>
     )
 }
